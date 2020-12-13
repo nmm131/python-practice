@@ -5,7 +5,7 @@ Created on Nov 4, 2020
 '''
 
 import unittest
-import functions
+from src.main import functions
 
 class TestFunctions(unittest.TestCase):
 
