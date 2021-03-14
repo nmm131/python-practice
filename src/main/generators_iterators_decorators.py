@@ -4,6 +4,8 @@ Created on Mar 14, 2021
 @author: N8
 """
 
+from functools import wraps
+
 
 def get_next_multiple(num, count=2):
     while True:
@@ -30,15 +32,53 @@ def get_next_prime(num):
             yield val
 
 
+def double_result(function):
+    @wraps(function)
+    def inner(*args, **kwargs):
+        return function(*args, **kwargs) * 2
+    return inner
+
+
+@double_result
+def add(a, b):
+    return a + b
+
+
+def only_even_parameters(fn):
+    @wraps(fn)
+    def inner(*args, **kwargs):
+        if any([arg for arg in args if arg % 2 != 0]):
+            return "Please add even numbers"
+        return fn(*args, **kwargs)
+    return inner
+
+
+@only_even_parameters
+def subtract(a, b):
+    return a - b
+
+
+def sum_index(collection):
+    total = 0
+    for index, val in enumerate(collection):
+        total = total + index
+    return total
+
+
 if __name__ == "__main__":
     multiple = get_next_multiple(2)
     print(next(multiple))
     print(next(multiple))
     print(next(multiple))
-
     print()
-
     gen = get_next_prime(13)
     print(next(gen))
     print(next(gen))
     print(next(gen))
+    print()
+    print(add(5, 5)) # @double_result
+    print()
+    print(subtract(7, 3)) # @only_even_parameters
+    print(subtract(4, 2)) # @only_even_parameters
+    print()
+    print(sum_index([1, 2, 3, 4]))
