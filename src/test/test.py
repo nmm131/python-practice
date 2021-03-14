@@ -104,5 +104,6 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(oneAddition(2,2), None)
         self.assertEqual(oneAddition(12,200), None)
 
+
 if __name__ == '__main__':
     unittest.main()

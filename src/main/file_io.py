@@ -5,6 +5,7 @@ Created on Mar 14, 2021
 """
 
 import re
+import csv
 TEXT_FILE = 'student.txt'
 CSV_FILE = 'users.csv'
 
@@ -20,6 +21,7 @@ def find_student(first_name):
         for name in file:
             if name == first_name:
                 print("{} was found!".format(first_name))
+    return None
 
 
 def update_student(first_name, new_name):
@@ -42,8 +44,20 @@ def remove_student(first_name):
     return None
 
 
-if __name__ == "__main__":
-    add_student("New")
-    find_student("Minta")
-    update_student("Marry", "Update")
-    remove_student("Seth")
+def print_names():
+    with open(CSV_FILE) as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            print("{} {}".format(row['first_name'], row['last_name']))
+    return None
+
+
+def add_name():
+    with open(CSV_FILE, 'a', newline='') as file:
+        fieldnames = ['first_name', 'last_name']
+        writer = csv.DictWriter(file, fieldnames)
+        first_name = input("Please specify a first name: ")
+        last_name = input("Please specify a last name: ")
+        writer.writerow(dict(first_name=first_name, last_name=last_name))
+    return None
+
