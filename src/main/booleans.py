@@ -1,8 +1,8 @@
-'''
+"""
 Created on Nov 4, 2020
 
 @author: N8
-'''
+"""
 
 # Declare a variable called first and assign it to the value "Hello World".
 print('Declare a variable called first and assign it to the value "Hello World".')
@@ -17,8 +17,10 @@ print("This is a comment.")
 print('\nLog a message to the terminal that says "I AM A COMPUTER!".')
 print("I AM A COMPUTER!")
 
-# Write an if statement that checks if 1 is less than 2 and if 4 is greater than 2. If it is, show the message "Math is fun."
-print('\nWrite an if statement that checks if 1 is less than 2 and if 4 is greater than 2. If it is, show the message "Math is fun.".')
+# Write an if statement that checks if 1 is less than 2 and if 4 is greater than 2.
+# If it is, show the message "Math is fun."
+print('\nWrite an if statement that checks if 1 is less than 2 and if 4 is greater than '
+      '2. If it is, show the message "Math is fun.".')
 if 1 < 2 < 4:
     print("Math is fun.")
 
@@ -67,7 +69,9 @@ name = input("What's your name?")
 # If the number is negative, show a message that says "That number is less than 0!"
 # If the number is positive, show a message that says "That number is greater than 0!"
 # Otherwise, show a message that says "You picked 0!.
-print('\nAsk the user for a number. If the number is negative, show a message that says "That number is less than 0!" If the number is positive, show a message that says "That number is greater than 0!" Otherwise, show a message that says "You picked 0!".')
+print('\nAsk the user for a number. If the number is negative, show a message that '
+      'says "That number is less than 0!" If the number is positive, show a message '
+      'that says "That number is greater than 0!" Otherwise, show a message that says "You picked 0!".')
 num = float(input("Pick a number."))
 if num < 0:
     print("The number is less than 0!")

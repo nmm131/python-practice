@@ -1,8 +1,8 @@
-'''
+"""
 Created on Nov 4, 2020
 
 @author: N8
-'''
+"""
 
 # Given a list [1,2,3,4],
 # print out all the values in the list.
@@ -36,19 +36,22 @@ number_list_2 = [3, 4, 5, 6]
 
 # Given a list of words ["Elie", "Tim", "Matt"],
 # return a new list with each word reversed and in lower case (['eile', 'mit', 'ttam']).
-print("""\nGiven a list of words ["Elie", "Tim", "Matt"] return a new list with each word reversed and in lower case (['eile', 'mit', 'ttam']).""")
+print("""\nGiven a list of words ["Elie", "Tim", "Matt"] return a new list with 
+each word reversed and in lower case (['eile', 'mit', 'ttam']).""")
 [print(word.lower() [::-1]) for word in word_list]
 
 # Given two strings "first" and "third",
 # return a new string with all the letters present in both words (["i", "r", "t"]).
-print('\nGiven two strings "first" and "third", return a new string with all the letters present in both words (["i", "r", "t"]).')
+print('\nGiven two strings "first" and "third", return a new string with all the '
+      'letters present in both words (["i", "r", "t"]).')
 string_1 = "first"
 string_2 = "third"
 [print(char) for char in string_1 if char in string_2]
 
 # For all the numbers between 1 and 100,
 # return a list with all the numbers that are divisible by 12 ([12, 24, 36, 48, 60, 72, 84, 96]).
-print("\nFor all the numbers between 1 and 100, return a list with all the numbers that are divisible by 12 ([12, 24, 36, 48, 60, 72, 84, 96]).")
+print("\nFor all the numbers between 1 and 100, return a list with all the "
+      "numbers that are divisible by 12 ([12, 24, 36, 48, 60, 72, 84, 96]).")
 [print(num) for num in range(1, 100, 1) if num % 12 == 0]
 
 # Given the string "amazing",

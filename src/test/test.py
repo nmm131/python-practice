@@ -1,11 +1,12 @@
-'''
+"""
 Created on Nov 4, 2020
 
 @author: N8
-'''
+"""
 
 import unittest
-from src.main import functions
+from main import functions
+
 
 class TestFunctions(unittest.TestCase):
 
